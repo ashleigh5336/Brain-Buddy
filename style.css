@@ -19,7 +19,7 @@ body{
 }
 
 .nav a:hover{
-    background-color:rgb(95, 159, 216);
+    background-color:rgb(255, 255, 255);
     border-radius: 5px;
 }
 
