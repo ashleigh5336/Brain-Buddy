@@ -1,0 +1,34 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: powderblue;
+    margin: 0;
+    padding: 20px;
+}
+
+.nav {
+    background-color: royalblue;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: solid;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.nav a:hover{
+    background-color: lightcyan;
+    border-radius: 5px;
+}
+
+h1 { 
+    color:black; 
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
