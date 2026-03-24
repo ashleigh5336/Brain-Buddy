@@ -1,12 +1,12 @@
 body{
-    font-family: Arial, sans-serif;
-    background-color: powderblue;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
     margin: 0;
     padding: 20px;
 }
 
 .nav {
-    background-color: royalblue;
+    background-color: rgb(9, 110, 204);
     padding: 10px;
     text-align: center;
 }
@@ -19,7 +19,7 @@ body{
 }
 
 .nav a:hover{
-    background-color: lightcyan;
+    background-color:white;
     border-radius: 5px;
 }
 
