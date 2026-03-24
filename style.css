@@ -6,13 +6,13 @@ body{
 }
 
 .nav {
-    background-color: rgb(9, 110, 204);
+    background-color: rgb(16, 114, 206);
     padding: 10px;
     text-align: center;
 }
 
 .nav a {
-    color: white;
+    color: rgb(95, 159, 216);
     text-decoration: solid;
     padding: 10px 20px;
     display: inline-block;
