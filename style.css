@@ -40,17 +40,15 @@ p {
 
 .question {
     background: white;
+    padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
-    height: 320px;          
-    box-sizing: border-box;
-    padding: 15px 20px;
-
-    overflow: hidden;
+    min-height: 260px;   /* same size feel without cutting content */
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .question p {
