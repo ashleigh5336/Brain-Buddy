@@ -39,25 +39,30 @@
     <p>Score: <span id="score">0</span> / 3</p>
 
     <script>
-        let score = 0;
-        const totalQuestions = 3;
-        let answered = 0;
+    let score = 0;
+    const totalQuestions = 3;
+    let answered = 0;
 
-        const buttons = document.querySelectorAll('.answer-btn');
+    const buttons = document.querySelectorAll('.answer-btn');
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                if (button.disabled) return;
-                btnsInQuestion.forEach(btn => {
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.disabled) return;
+
+            const questionDiv = button.parentElement;
+            const btnsInQuestion = questionDiv.querySelectorAll('.answer-btn');
+
+            const isCorrect = button.getAttribute('data-correct') === 'true';
+
+            // Update score
+            if (isCorrect) {
+                score++;
+                document.getElementById('score').innerText = score;
+            }
+
+            // Disable all buttons + show colors
+            btnsInQuestion.forEach(btn => {
                 btn.disabled = true;
-
-                const isCorrect = button.getAttribute('data-correct') === 'true';
-                if (isCorrect) {
-                    score++;
-                    document.getElementById('score').innerText = score;
-                }
-
-                
 
                 if (btn.getAttribute('data-correct') === 'true') {
                     btn.classList.add('correct');
@@ -66,16 +71,14 @@
                 }
             });
 
-                const questionDiv = button.parentElement;
-                const btnsInQuestion = questionDiv.querySelectorAll('.answer-btn');
-                btnsInQuestion.forEach(btn => btn.disabled = true);
+            // Count answered questions
+            answered++;
 
-                answered++;
-                if (answered === totalQuestions) {
-                    alert('Quiz complete! Your final score: ' + score + '/' + totalQuestions);
-                }
-            });
+            if (answered === totalQuestions) {
+                alert('Quiz complete! Your final score: ' + score + '/' + totalQuestions);
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
