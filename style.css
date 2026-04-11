@@ -8,7 +8,7 @@ body {
 .nav {
     background-color: rgb(16, 114, 206);
     padding: 10px;
-    text-align: center;
+    text-align: right;
 }
 
 .nav a {
