@@ -33,13 +33,11 @@ p {
     line-height: 1.5;
 }
 
-/* Quiz container */
 #quiz-container {
     max-width: 600px;
     margin: auto;
 }
 
-/* Each question block */
 .question {
     background: white;
     padding: 15px 20px;
@@ -48,53 +46,43 @@ p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Question text */
 .question p {
     margin-bottom: 10px;
+    color: #000;
 }
 
-/* Answer buttons */
 .answer-btn {
     display: block;
-    margin-left: 20px; /* INDENTATION */
+    margin-left: 20px;
     margin-bottom: 10px;
     padding: 10px;
     width: calc(100% - 20px);
-    border: 2px solid #ccc;
+    border: 2px solid #000;
     background-color: #fff;
+    color: #000;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: 0.2s;
 }
 
-/* Hover effect */
 .answer-btn:hover {
-    background-color: #e6f0ff;
+    background-color: #dbeafe;
 }
 
-/* Selected states (you'll trigger these via JS if you want more control) */
-.answer-btn.correct {
+.answer-btn.selected {
     background-color: #4CAF50;
     color: white;
     border-color: #4CAF50;
 }
 
-.answer-btn.wrong {
-    background-color: #f44336;
-    color: white;
-    border-color: #f44336;
+.answer-btn:active {
+    transform: scale(0.98);
 }
 
-/* Disabled buttons */
-.answer-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.8;
-}
-
-/* Score styling */
 p {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    color: #000;
 }
