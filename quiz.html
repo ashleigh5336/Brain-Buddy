@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JavaScript Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain-Buddy - Learning Style Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,169 +13,336 @@
         <a href="quiz.html">Quiz</a>
     </div>
 
-    <h1>JavaScript Quiz</h1>
+    <h1>Learning Style Quiz</h1>
+    <p class="subtitle">Pick one answer for each question</p>
+    <div class="progress-box">
+        <div class="progress-bar" id="progressBar"></div>
+        <p class="progress-text" id="progressText">0 of 20 answered</p>
+    </div>
+
     <div id="quiz-container">
-       <div class="question">
-            <p><strong>1. What kind of books do you enjoy reading? :</strong></p>
-            <button class="answer-btn" >Books with lots of pictures/diagrams</button>
-            <button class="answer-btn" >A book with lost of words and explanations</button>
-            <button class="answer-btn" >A book with puzzles or word searches</button>
-            <button class="answer-btn" >E-books</button>
-       </div>
-        <div class="question">
-            <p><strong>2. When you are unsure of the spelling of a word, what do you do?</strong></p>
-            <button class="answer-btn">Write it down to see if it looks right</button>
-            <button class="answer-btn">Ask a teacher</button>
-            <button class="answer-btn" >Spell the word outloud</button>
-            <button class="answer-btn" >Trace the letters in the air (finger spelling)</button>
-            <button class="answer-btn" >Google how to spell the word</button>
+        <div class="question" data-q="1">
+            <p class="q-text">1. What kind of books do you enjoy reading?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Books with lots of pictures/diagrams</button>
+                <button class="answer-btn" data-type="reading">A book with lots of words and explanations</button>
+                <button class="answer-btn" data-type="kinesthetic">A book with puzzles or word searches</button>
+                <button class="answer-btn" data-type="visual">E-books</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>3. How do you study for a test?</strong></p>
-            <button class="answer-btn">Read your notes</button>
-            <button class="answer-btn">Practice past papers</button>
-            <button class="answer-btn" >Watch videos explaining the work</button>
-            <button class="answer-btn" >Active recall</button>
-            <button class="answer-btn" >Explain a concept in simple terms as if teaching it to someone else</button>
-            <button class="answer-btn" >Using mind maps</button>
+        <div class="question" data-q="2">
+            <p class="q-text">2. When you are unsure of the spelling of a word, what do you do?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Write it down to see if it looks right</button>
+                <button class="answer-btn" data-type="auditory">Ask a teacher</button>
+                <button class="answer-btn" data-type="auditory">Spell the word out loud</button>
+                <button class="answer-btn" data-type="kinesthetic">Trace the letters in the air</button>
+                <button class="answer-btn" data-type="reading">Google how to spell the word</button>
+            </div>
         </div>
-        <div class="question"></div>
-            <p><strong>4. When you want to learn how something works (like a computer or a video game)what do you do?</strong></p>
-            <button class="answer-btn" >Ask someone to show you</button>
-            <button class="answer-btn" >Watch a tutorial</button>
-            <button class="answer-btn" > Try to figure it out on your own</button>
-            <button class="answer-btn" >Use an instruction manual</button> 
+        <div class="question" data-q="3">
+            <p class="q-text">3. How do you study for a test?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="reading">Read your notes</button>
+                <button class="answer-btn" data-type="kinesthetic">Practice past papers</button>
+                <button class="answer-btn" data-type="visual">Watch videos explaining the work</button>
+                <button class="answer-btn" data-type="reading">Active recall</button>
+                <button class="answer-btn" data-type="auditory">Explain it as if teaching someone else</button>
+                <button class="answer-btn" data-type="visual">Using mind maps</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>5. When I want to find out more about a tour I am going on,I would :</strong></p>
-            <button class="answer-btn" >Read about the tour on the internet</button>
-            <button class="answer-btn" >use a map and see where the places are.</button>
-            <button class="answer-btn" >Watch vlogs and read reviews</button>
+        <div class="question" data-q="4">
+            <p class="q-text">4. When you want to learn how something works, what do you do?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="kinesthetic">Ask someone to show you</button>
+                <button class="answer-btn" data-type="visual">Watch a tutorial</button>
+                <button class="answer-btn" data-type="kinesthetic">Try to figure it out on your own</button>
+                <button class="answer-btn" data-type="reading">Use an instruction manual</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>6. When learning from the Internet I like </strong></p>
-            <button class="answer-btn" >podcasts and videos where I can listen to experts.</button>
-            <button class="answer-btn" >detailed articles</button>
-            <button class="answer-btn" >interesting design and visual features.</button>
+        <div class="question" data-q="5">
+            <p class="q-text">5. When I want to find out more about a tour, I would:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="reading">Read about the tour on the internet</button>
+                <button class="answer-btn" data-type="visual">Use a map and see where the places are</button>
+                <button class="answer-btn" data-type="visual">Watch vlogs and read reviews</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>7. I have finished a competition or test and I would like some feedback:</strong></p>
-            <button class="answer-btn" >using graphs showing how my performance has improved.</button>
-            <button class="answer-btn" >using a written description of my results.</button>
-            <button class="answer-btn" >from somebody who talks it through with me.</button>
-             <button class="answer-btn">using examples from what I have done.</button> 
+        <div class="question" data-q="6">
+            <p class="q-text">6. When learning from the Internet I like:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="auditory">Podcasts and videos where I can listen</button>
+                <button class="answer-btn" data-type="reading">Detailed articles</button>
+                <button class="answer-btn" data-type="visual">Interesting design and visual features</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>8. I prefer a presenter or a teacher who uses:</strong></p>
-            <button class="answer-btn" >diagrams, charts, maps or graphs.</button>
-            <button class="answer-btn" >handouts, books, or readings.</button>
-            <button class="answer-btn" >question and answer, talk, group discussion, or guest speakers.</button>
-             <button class="answer-btn">demonstrations, models or practical sessions.</button> 
+        <div class="question" data-q="7">
+            <p class="q-text">7. I have finished a test and I would like feedback:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Using graphs showing my performance</button>
+                <button class="answer-btn" data-type="reading">Using a written description of my results</button>
+                <button class="answer-btn" data-type="auditory">From somebody who talks it through with me</button>
+                <button class="answer-btn" data-type="kinesthetic">Using examples from what I have done</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>9. If I wanted to learn how to take better photos. I would:</strong></p>
-            <button class="answer-btn" >ask questions and talk about the camera and its features.</button>
-            <button class="answer-btn" >use examples of good and poor photos showing how to improve them</button>
-            <button class="answer-btn" >use diagrams showing the camera and what each part does.</button>
-             <button class="answer-btn">use the written instructions about what to do.</button> 
+        <div class="question" data-q="8">
+            <p class="q-text">8. I prefer a teacher who uses:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Diagrams, charts, maps or graphs</button>
+                <button class="answer-btn" data-type="reading">Handouts, books, or readings</button>
+                <button class="answer-btn" data-type="auditory">Question and answer, talk, group discussion</button>
+                <button class="answer-btn" data-type="kinesthetic">Demonstrations, models or practical sessions</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>10. When looking for directions or help, I would:</strong></p>
-            <button class="answer-btn" >Want to see a diagram or map and make notes </button>
-            <button class="answer-btn" >Ask someone to explain it </button>
-            <button class="answer-btn" >Find my own way/ Walk around until I find what I'm looking for</button>
-            <button class="answer-btn">Use a GPS</button>
-            <button class="answer-btn">Use a book/brochure with directions</button>
-       </div>
-       <div class="question">
-            <p><strong>11. What do you enjoy doing the most?</strong></p>
-            <button class="answer-btn" >Listening to music </button>
-            <button class="answer-btn" >Reading books,articles or magazines </button>
-            <button class="answer-btn" >Going out for a walk or playing sports</button>
-            <button class="answer-btn">Watching movies</button>
-            <button class="answer-btn">Drawing,painting or crocheting</button>
-            <button class="answer-btn">Writing (stories,essays.etc)</button>      
+        <div class="question" data-q="9">
+            <p class="q-text">9. If I wanted to learn how to take better photos, I would:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="auditory">Ask questions and talk about the camera</button>
+                <button class="answer-btn" data-type="visual">Use examples of good and poor photos</button>
+                <button class="answer-btn" data-type="visual">Use diagrams showing the camera parts</button>
+                <button class="answer-btn" data-type="reading">Use the written instructions</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>12. Which of these 4 clubs would you be interested in?</p>
-            <button class="answer-btn" >The music club </button>
-            <button class="answer-btn" >The art club</button>
-            <button class="answer-btn" >Any sports club</button>
-            <button class="answer-btn">Reading/Writing club</button>
+        <div class="question" data-q="10">
+            <p class="q-text">10. When looking for directions, I would:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Want to see a diagram or map</button>
+                <button class="answer-btn" data-type="auditory">Ask someone to explain it</button>
+                <button class="answer-btn" data-type="kinesthetic">Find my own way / Walk around</button>
+                <button class="answer-btn" data-type="visual">Use a GPS</button>
+                <button class="answer-btn" data-type="reading">Use a book/brochure with directions</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>13. What is the best way for you to remember a friend's phone number?</p>
-            <button class="answer-btn" > Write it down or save it in your phone</button>
-            <button class="answer-btn" >Say it out loud repeatedly or by creating a rhyme or song</button>
-            <button class="answer-btn" >Picture the numbers on the phone as you would dial them</button>
-            <button class="answer-btn">Using handsigns</button>
+        <div class="question" data-q="11">
+            <p class="q-text">11. What do you enjoy doing the most?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="auditory">Listening to music</button>
+                <button class="answer-btn" data-type="reading">Reading books, articles or magazines</button>
+                <button class="answer-btn" data-type="kinesthetic">Going out for a walk or playing sports</button>
+                <button class="answer-btn" data-type="visual">Watching movies</button>
+                <button class="answer-btn" data-type="visual">Drawing, painting or crocheting</button>
+                <button class="answer-btn" data-type="reading">Writing (stories, essays, etc)</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>14. When learning a new subject, I prefer:</strong></p>
-            <button class="answer-btn">Watching demonstrations</button>
-            <button class="answer-btn">Listening to explanations</button>
-            <button class="answer-btn">Reading instructions</button>
-            <button class="answer-btn">Trying it myself</button>
+        <div class="question" data-q="12">
+            <p class="q-text">12. Which of these clubs would you be interested in?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="auditory">The music club</button>
+                <button class="answer-btn" data-type="visual">The art club</button>
+                <button class="answer-btn" data-type="kinesthetic">Any sports club</button>
+                <button class="answer-btn" data-type="reading">Reading/Writing club</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>15. When working in a group, I usually:</strong></p>
-            <button class="answer-btn">Take notes or organize ideas</button>
-            <button class="answer-btn">Talk and discuss ideas</button>
-            <button class="answer-btn">Observe and think quietly</button>
-            <button class="answer-btn">Do practical tasks</button>
+        <div class="question" data-q="13">
+            <p class="q-text">13. What is the best way to remember a phone number?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="reading">Write it down or save it in your phone</button>
+                <button class="answer-btn" data-type="auditory">Say it out loud repeatedly</button>
+                <button class="answer-btn" data-type="visual">Picture the numbers on the phone</button>
+                <button class="answer-btn" data-type="kinesthetic">Using hand signs</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>16. What helps you understand best?</strong></p>
-            <button class="answer-btn">Pictures and diagrams</button>
-            <button class="answer-btn">Listening to explanations</button>
-            <button class="answer-btn">Reading text</button>
-            <button class="answer-btn">Hands-on practice</button>
+        <div class="question" data-q="14">
+            <p class="q-text">14. When learning a new subject, I prefer:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Watching demonstrations</button>
+                <button class="answer-btn" data-type="auditory">Listening to explanations</button>
+                <button class="answer-btn" data-type="reading">Reading instructions</button>
+                <button class="answer-btn" data-type="kinesthetic">Trying it myself</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>17. When remembering something, you:</strong></p>
-            <button class="answer-btn">Visualize it</button>
-            <button class="answer-btn">Repeat it out loud</button>
-            <button class="answer-btn">Write it down</button>
-            <button class="answer-btn">Act it out</button>
+        <div class="question" data-q="15">
+            <p class="q-text">15. When working in a group, I usually:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="reading">Take notes or organize ideas</button>
+                <button class="answer-btn" data-type="auditory">Talk and discuss ideas</button>
+                <button class="answer-btn" data-type="visual">Observe and think quietly</button>
+                <button class="answer-btn" data-type="kinesthetic">Do practical tasks</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>18. In class, you prefer:</strong></p>
-            <button class="answer-btn">Slides and visuals</button>
-            <button class="answer-btn">Lectures</button>
-            <button class="answer-btn">Reading materials</button>
-            <button class="answer-btn">Activities</button>
+        <div class="question" data-q="16">
+            <p class="q-text">16. What helps you understand best?</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Pictures and diagrams</button>
+                <button class="answer-btn" data-type="auditory">Listening to explanations</button>
+                <button class="answer-btn" data-type="reading">Reading text</button>
+                <button class="answer-btn" data-type="kinesthetic">Hands-on practice</button>
+            </div>
         </div>
-        <div class="question">
-            <p><strong>19. When solving a problem, you:</strong></p>
-            <button class="answer-btn">Draw it out</button>
-            <button class="answer-btn">Talk it through</button>
-            <button class="answer-btn">Read instructions carefully</button>
-            <button class="answer-btn">Test different solutions</button>
+        <div class="question" data-q="17">
+            <p class="q-text">17. When remembering something, you:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Visualize it</button>
+                <button class="answer-btn" data-type="auditory">Repeat it out loud</button>
+                <button class="answer-btn" data-type="reading">Write it down</button>
+                <button class="answer-btn" data-type="kinesthetic">Act it out</button>
+            </div>
         </div>
-        <div class="question">
-           <p><strong>20. When learning something new, you prefer to:</strong></p>
-           <button class="answer-btn">See examples</button>
-           <button class="answer-btn">Hear explanations</button>
-           <button class="answer-btn">Read about it</button>
-           <button class="answer-btn">Practice it yourself</button>
-        </div>\
-        <script>
+        <div class="question" data-q="18">
+            <p class="q-text">18. In class, you prefer:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Slides and visuals</button>
+                <button class="answer-btn" data-type="auditory">Lectures</button>
+                <button class="answer-btn" data-type="reading">Reading materials</button>
+                <button class="answer-btn" data-type="kinesthetic">Activities</button>
+            </div>
+        </div>
+        <div class="question" data-q="19">
+            <p class="q-text">19. When solving a problem, you:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">Draw it out</button>
+                <button class="answer-btn" data-type="auditory">Talk it through</button>
+                <button class="answer-btn" data-type="reading">Read instructions carefully</button>
+                <button class="answer-btn" data-type="kinesthetic">Test different solutions</button>
+            </div>
+        </div>
+        <div class="question" data-q="20">
+            <p class="q-text">20. When learning something new, you prefer to:</p>
+            <div class="answers">
+                <button class="answer-btn" data-type="visual">See examples</button>
+                <button class="answer-btn" data-type="auditory">Hear explanations</button>
+                <button class="answer-btn" data-type="reading">Read about it</button>
+                <button class="answer-btn" data-type="kinesthetic">Practice it yourself</button>
+            </div>
+        </div>
+    </div>
+    <div class="submit-area">
+        <button class="submit-btn" id="submitBtn" disabled>See My Results</button>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-box">
+            <h2 id="resultTitle">Your Result</h2>
+            <div class="emoji" id="resultEmoji">🎯</div>
+            <p id="resultText">Answer all questions to see your learning style!</p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
         const questions = document.querySelectorAll('.question');
         
-        questions.forEach(question => {
-                const buttons = question.querySelectorAll('.answer-btn');
-                
-                buttons.forEach(button => {
-                        button.addEventListener('click', () => {
-                                
-                        buttons.forEach(btn => {
-                                btn.classList.remove('selected');
-            });
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        
+        const submitBtn = document.getElementById('submitBtn');
+        
+        const popup = document.getElementById('popup');
+        const resultTitle = document.getElementById('resultTitle');
+        const resultEmoji = document.getElementById('resultEmoji');
+        const resultText = document.getElementById('resultText');
 
-                button.classList.add('selected');
+        let answers = {};
+
+        questions.forEach(question => {
+            const buttons = question.querySelectorAll('.answer-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const qNum = question.getAttribute('data-q');
+                    
+                    buttons.forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    
+                    button.classList.add('selected');
+                    
+                    answers[qNum] = button.getAttribute('data-type');
+                    
+                    updateProgress();
+                });
+            });
         });
-    });
-});
-</script>
+
+        function updateProgress() {
+            const answered = Object.keys(answers).length;
+            const total = questions.length;
+            const percent = (answered / total) * 100;
+            
+            progressBar.style.width = percent + '%';
+            
+            progressText.textContent = answered + ' of ' + total + ' answered';
+            
+            if (answered === total) {
+                submitBtn.disabled = false;
+            }
+        }
+
+        submitBtn.addEventListener('click', showResults);
+
+        function showResults() {
+            let scores = {
+                visual: 0,
+                auditory: 0,
+                reading: 0,
+                kinesthetic: 0
+            };
+
+            for (let style of Object.values(answers)) {
+                scores[style]++;
+            }
+
+            let maxScore = 0;
+            for (let score of Object.values(scores)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                }
+            }
+
+            let topStyles = [];
+            for (let [style, score] of Object.entries(scores)) {
+                if (score === maxScore) {
+                    topStyles.push(style);
+                }
+            }
+
+            const styleInfo = {
+                visual: {
+                    title: 'Visual Learner',
+                    emoji: '👁️',
+                    text: 'You learn best through images, diagrams, and videos. Use color-coded notes, mind maps, and watch tutorials!'
+                },
+                auditory: {
+                    title: 'Auditory Learner',
+                    emoji: '🎧',
+                    text: 'You learn best by listening and speaking. Try recording yourself, discussing topics, and using songs to remember!'
+                },
+                reading: {
+                    title: 'Reading/Writing Learner',
+                    emoji: '📚',
+                    text: 'You learn best by reading and writing. Take detailed notes, rewrite concepts, and make lists!'
+                },
+                kinesthetic: {
+                    title: 'Kinesthetic Learner',
+                    emoji: '✋',
+                    text: 'You learn best by doing. Try hands-on experiments, role-playing, and taking breaks to move around!'
+                }
+            };
+
+            if (topStyles.length === 1) {
+                let style = styleInfo[topStyles[0]];
+                resultTitle.textContent = 'You are a ' + style.title + '!';
+                resultEmoji.textContent = style.emoji;
+                resultText.textContent = style.text;
+            } else {
+                let names = topStyles.map(s => styleInfo[s].title).join(' & ');
+                let emojis = topStyles.map(s => styleInfo[s].emoji).join(' ');
+                resultTitle.textContent = 'You are a ' + names + '!';
+                resultEmoji.textContent = emojis;
+                resultText.textContent = 'You have a mixed learning style! Try combining different study methods.';
+            }
+
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            popup.classList.remove('active');
+        }
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+    </script>
 </body>
 </html>
